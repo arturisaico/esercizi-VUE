@@ -1,14 +1,14 @@
 <template lang="html">
 
-  <section class="src-components-hello-world">
-    <h1>src-components-hello-world Component</h1>
+  <section class="src-components-ex-2">
+    <h1>src-components-ex-2 Component</h1>
   </section>
 
 </template>
 
 <script lang="js">
   export default  {
-    name: 'src-components-hello-world',
+    name: 'ex-2',
     props: [],
     mounted() {
 
@@ -28,7 +28,6 @@
 </script>
 
 <style scoped lang="scss">
-  .src-components-hello-world {
-
-  }
+.src-components-ex-2 {
+}
 </style>

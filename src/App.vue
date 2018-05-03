@@ -1,29 +1,66 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+
+
+    <h1 class="text-center mt-5 container">Titolo Ex DOM VUE</h1>
+
+    <div class="mt-5 text-center container" id="button">
+        <button @click="" data-position="1" class="btn btn-dark px-3 mx-3 ">Ex.1</button>
+        <button @click="" data-position="2" class="btn btn-dark px-3 mx-3">Ex.2</button>
+        <button @click="" data-position="3" class="btn btn-dark px-3 mx-3 ">Ex.3</button>
+        <button @click="" data-position="4" class="btn btn-dark px-3 mx-3">Ex.4</button>
+        <button @click="" data-position="5" class="btn btn-dark px-3 mx-3">Ex.5</button>
+        <button @click="" data-position="6" class="btn btn-dark px-3 mx-3">Ex.6</button>
+        <button @click="" data-position="7" class="btn btn-dark px-3 mx-3">Ex.7</button>
+        <button @click="" data-position="8" class="btn btn-dark px-3 mx-3">Ex.8</button>
+        <button @click="" data-position="9" class="btn btn-dark px-3 mx-3">Ex.9</button>
+        <button @click="" data-position="10" class="btn btn-dark px-3 mx-3">Ex.10</button>
     </div>
-    <router-view/>
+
+    <div class="panel-contener bg-secondary mt-5 container p-4">
+      <ex1></ex1>
+      <ex2></ex2>
+      <ex3></ex3>
+      <ex4></ex4>
+      <ex5></ex5>
+      <ex6></ex6>
+      <ex7></ex7>
+    </div>
+
   </div>
+
+
+ 
 </template>
 
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+
+
+
+<script>
+import ex1 from "./components/ex1.vue";
+import ex2 from "./components/ex2.vue";
+import ex3 from "./components/ex3.vue";
+import ex4 from "./components/ex4.vue";
+import ex5 from "./components/ex5.vue";
+import ex6 from "./components/ex6.vue";
+import ex7 from "./components/ex7.vue";
+
+export default {
+  name: "app",
+  components: {
+    ex1,
+    ex2,
+    ex3,
+    ex4,
+    ex5,
+    ex6,
+    ex7
   }
-}
+};
+</script>
+
+
+<style lang="scss">
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../node_modules/font-awesome/css/font-awesome.min.css";
 </style>
