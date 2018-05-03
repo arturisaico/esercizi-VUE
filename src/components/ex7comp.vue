@@ -1,6 +1,6 @@
 <template >
 
-  <li v-if="montrer" class=" mt-4  bg-white icon d-flex justify-content-between">
+  <li v-if="montrer"  class=" mt-4  bg-white icon d-flex justify-content-between" :class="{'done':barrato}">
     <div class="nome ajouter ml-4"> <p :class="{'barrato':barrato}" class="my-4">{{name}}</p></div>
     <form v-if="form" action="" class="form-inline justify-content-center " id="form-task">
         <input v-model="name" type="text" id="input-task" class="form-control" placeholder="new task">
@@ -32,12 +32,15 @@
         montrer : true ,
         barrato : false,
         form : false,
-        name: this.texte
+        name: this.texte,
+ 
+       
       }
     },
     methods: {
       verifie() {
       this.barrato = !this.barrato
+
     },
       canc() {
         this.montrer = !this.montrer
@@ -51,10 +54,11 @@
       },
     },
     computed: {
-
+      
     }
 }
 </script>
+
 
 
 <style scoped lang="scss">

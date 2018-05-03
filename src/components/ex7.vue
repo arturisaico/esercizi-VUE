@@ -11,12 +11,12 @@
             </form>
             <h2 class="mt-5">
                 <small>Filtre :</small>
-                <button class="btn btn-success filtre" id="all">All</button>
-                <button class="btn btn-success filtre" id="todo">Todo</button>
-                <button class="btn btn-success filtre" id="done">Done</button>
+                <button class="btn btn-success filtre" id="all" @click="filtrere">All</button>
+                <button class="btn btn-success filtre" id="todo" @click="filtrere">Todo</button>
+                <button class="btn btn-success filtre" id="done" @click="filtrere">Done</button>
             </h2>
-            <ul class="list-group flex-column " id="list-tasks">
-                <ex7comp v-for="(mucca,index) in contenitore" :key="index" :texte="mucca" v-on:deleteme="deleteElement"> </ex7comp>
+            <ul class="list-group flex-column" :class="newfilter" id="list-tasks">
+                <ex7comp v-for="(mucca,index) in contenitore" :key="index" :texte="mucca" > </ex7comp>
             </ul>
         </div>
 
@@ -37,7 +37,8 @@ export default {
   data() {
     return {
       value: "",
-      contenitore: []
+      contenitore: [],
+      newfilter: "all"
     };
   },
   methods: {
@@ -45,8 +46,9 @@ export default {
       this.contenitore.push(this.value);
       this.value = "";
     },
-    deleteElement(name) {
-      
+    filtrere(event) {
+      this.newfilter = event.currentTarget.id;
+      console.log(event.currentTarget.id);
     }
   }
 };
@@ -54,5 +56,19 @@ export default {
 
 
 <style lang="scss">
-
+ul {
+  &.todo {
+    li.done {
+      display: none !important;
+    }
+  }
+  &.done {
+    li.done {
+      display: block !important;
+    }
+    li {
+      display: none !important;
+    }
+  }
+}
 </style>
