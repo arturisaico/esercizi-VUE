@@ -16,7 +16,7 @@
                 <button class="btn btn-success filtre" id="done" @click="filtrere">Done</button>
             </h2>
             <ul class="list-group flex-column" :class="newfilter" id="list-tasks">
-                <ex7comp v-for="(mucca,index) in contenitore" :key="index" :texte="mucca" > </ex7comp>
+                <ex7comp @canc="canc2" v-for="(mucca,index) in contenitore" :key="index" :texte="mucca" > </ex7comp>
             </ul>
         </div>
 
@@ -49,6 +49,9 @@ export default {
     filtrere(event) {
       this.newfilter = event.currentTarget.id;
       console.log(event.currentTarget.id);
+    },
+    canc2(mucca) {
+      this.contenitore.splice(this.contenitore.indexOf(mucca), 1);
     }
   }
 };
@@ -64,7 +67,7 @@ ul {
   }
   &.done {
     li.done {
-      display: block !important;
+      display: flex !important;
     }
     li {
       display: none !important;
